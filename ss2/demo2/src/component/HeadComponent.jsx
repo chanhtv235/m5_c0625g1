@@ -33,9 +33,9 @@ export default function HeadComponent() {
                             {!auth.account && <li className="nav-item">
                                 <Link className="nav-link" to={'/login'}>Login</Link>
                             </li>}
-                            {(auth.account !== null) ? <li className="nav-item">
+                            {auth.account&& <li className="nav-item">
                                 <button onClick={handleLogout} className="nav-link">Logout</button>
-                            </li> : ""}
+                            </li>}
                             <li className="nav-item">
                                 <span className="nav-link">{auth?.account?.username}</span>
                             </li>
